@@ -14,11 +14,16 @@ import javax.swing.JTextField;
 
 public class Test1 extends JFrame implements ActionListener{
 	
+//	선생님 코드
+	
+	
+	Test2 T2=new Test2();
 	JLabel titleLB=new JLabel("휴먼프로그램");
 
 	
 	JButton btn= new JButton ("Login");
 	JButton close= new JButton ("Exit");
+	JButton join= new JButton ("회원가입");
 //	JButton 클릭이 가능한 레이아웃
 	
 	JLabel idLB=new JLabel("아이디");
@@ -38,7 +43,7 @@ public class Test1 extends JFrame implements ActionListener{
 	
 	public Test1() {
 		System.out.println("프로그램이 시작되었습니다.");
-		this.setBounds(100, 300, 200, 200);// 사이즈 설정
+		this.setBounds(100, 300, 300, 300);// 사이즈 설정
 		
 //		inputBody.setBackground(Color.yellow);
 //		btn.setBackground(Color.red);
@@ -62,11 +67,12 @@ public class Test1 extends JFrame implements ActionListener{
 		centerP.add(centerPS);
 		southP.add(btn);
 		southP.add(close);
+		southP.add(join);
 		btn.addActionListener(this);
 //		btn 컴포넌트의 이벤트(클릭 등) 을 처리하겠다. this가 참조하는 객체가 이를 처리해주는 인터페이스를 구현받았다.
 		close.addActionListener(this);
 //		this에 컴포넌트를 배치시킨다... 기본은 보더레이아웃
-		
+		join.addActionListener(this);
 		
 		
 		
@@ -85,12 +91,14 @@ public class Test1 extends JFrame implements ActionListener{
 	}
 @Override
 public void actionPerformed(ActionEvent e) {
-	System.out.println("이벤트 처리");
+
 	Object temp= e.getSource();
 	if(temp.equals(btn)) {
 		System.out.println("버튼 클릭");
 		String id=idInput.getText();
 		titleLB.setText(id);
+	}else if(temp.equals(join)) {
+		T2.setVisible(true);
 	}else if(temp.equals(close)) {
 		System.out.println("프로그램 종료");
 		System.exit(0);
