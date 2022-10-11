@@ -45,6 +45,7 @@ public class Test2 extends JFrame implements ActionListener{
 	
 	JPanel southP=new JPanel();
 //	남쪽에 나타날 컴포넌트
+	JPanel northP=new 	JPanel();
 	
 	
 	public Test2() {
@@ -55,9 +56,10 @@ public class Test2 extends JFrame implements ActionListener{
 		Center3.setBackground(Color.CYAN);
 		Center4.setBackground(Color.CYAN);
 		southP.setBackground(Color.CYAN);
-		title.setBackground(Color.CYAN);
+		northP.setBackground(Color.CYAN);
 //		색지정
-		this.add(title,"North");
+		northP.add(title);
+		this.add(northP,"North");
 		
 		Center.setLayout(new GridLayout(4,1));
 		Center1.setLayout(new FlowLayout());
